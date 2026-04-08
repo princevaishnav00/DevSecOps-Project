@@ -11,7 +11,8 @@ This project showcases how to:
 * Perform security scanning (SAST & Image Scanning)
 * Deploy applications on Kubernetes (AWS EKS)
 * Use GitOps principles for automated deployments
-* **Establish Full-Cluster Observability with Prometheus & Grafana**
+* Establish Full-Cluster Observability with Prometheus & Grafana
+* Automated Status Notifications via Email
 
 ---
 
@@ -51,6 +52,7 @@ User → LoadBalancer (AWS ELB)
 * GitHub (Version Control)
 * **Prometheus & Grafana (Monitoring & Observability)**
 * **ArgoCD (GitOps CD)**
+* **Jenkins Email Extension (Instant Notifications)**
 
 ---
 
@@ -63,7 +65,8 @@ User → LoadBalancer (AWS ELB)
 * 🛡️ Security scanning using Trivy
 * ☁️ Deployed on AWS EKS cluster
 * 🔁 GitOps-based deployment updates
-* 📊 **Real-time Monitoring & Dashboards (Prometheus/Grafana)**
+* 📊 Real-time Monitoring & Dashboards (Prometheus/Grafana)
+* 📧 Automated Email Notifications (Success/Failure)
 * 🎨 Responsive and modern UI
 
 ---
@@ -78,6 +81,7 @@ User → LoadBalancer (AWS ELB)
 6. **Push Images** to DockerHub
 7. **Update Kubernetes Manifests**
 8. **Deploy via GitOps (ArgoCD Ready)**
+9. **Instant Email Notification** (Sends build status to developer)
 
 ---
 
@@ -166,6 +170,7 @@ This project demonstrates real-world DevSecOps practices including:
 * **Security**: SonarQube (SAST) + Trivy (Image Scanning)
 * **Observability**: Prometheus & Grafana (Cluster Monitoring)
 * **Availability**: Zero-downtime Rolling Updates 
+* **Notifications**: Automated E-mail Alert System
 
 ---
 

@@ -97,14 +97,14 @@ pipeline {
     }
   }
 
-stage('Email-Notification'){
-   post {
+
+  post {
     success {
       emailext (
         subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
         body: """<p>SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'</p>
                 <p>Check the console output at: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
-        to: 'princevaishnav936@gmail.com', // Change this to your email
+        to: 'princevaishnav936@gmail.com',
         from: 'jenkins@example.com'
       )
     }
@@ -113,7 +113,7 @@ stage('Email-Notification'){
         subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
         body: """<p>FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'</p>
                 <p>Check the console output at: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
-        to: 'princevaishnav936@gmail.com', // Change this to your email
+        to: 'princevaishnav936@gmail.com',
         from: 'jenkins@example.com'
       )
     }

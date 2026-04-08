@@ -89,7 +89,7 @@ pipeline {
            git config user.name "jenkins"
            git add k8s/
            git commit -m "Update image tag to ${TAG}" || echo "No changes to commit"
-           git push https://\${GIT_USER}:\${GIT_PASS}@github.com/princevaishnav00/E-commerce-DevSecOps.git HEAD:main
+           git push https://\${GIT_USER}:\${GIT_PASS}@github.com/princevaishnav00/DevSecOps-Project.git HEAD:main
            """
            }
          } 

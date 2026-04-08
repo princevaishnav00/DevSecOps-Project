@@ -38,8 +38,8 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 script {
-                    sh "docker build -t ${BACKEND_IMAGE}:${TAG} ./bckend"
-                    sh "docker build -t ${FRONTEND_IMAGE}:${TAG} ./frntend"
+                    sh "docker build -t ${BACKEND_IMAGE}:${TAG} ./backend"
+                    sh "docker build -t ${FRONTEND_IMAGE}:${TAG} ./frontend"
                 }
             }
         }
@@ -57,7 +57,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_HUB_CREDENTIALS_ID, passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
-                        sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                        sh 'echo $DOCKER_PASSWORD | docker  -u $DOCKER_USERNAME --password-stdin'
                         sh "docker push ${BACKEND_IMAGE}:${TAG}"
                         sh "docker push ${FRONTEND_IMAGE}:${TAG}"
                         

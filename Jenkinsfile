@@ -57,7 +57,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_HUB_CREDENTIALS_ID, passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
-                        sh 'echo $DOCKER_PASSWORD | docker  -u $DOCKER_USERNAME --password-stdin'
+                        sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
                         sh "docker push ${BACKEND_IMAGE}:${TAG}"
                         sh "docker push ${FRONTEND_IMAGE}:${TAG}"
                         
@@ -78,8 +78,8 @@ pipeline {
 
             // Update image tags
             sh """
-            sed -i 's|image: .*/ecommerce-backend:.*|image: ${BACKEND_IMAGE}:${TAG}|g' k8s/backend-deploy.yaml
-            sed -i 's|image: .*/ecommerce-frontend:.*|image: ${FRONTEND_IMAGE}:${TAG}|g' k8s/frontend-deploy.yaml
+            sed -i 's|image: .*/ecommerce-backend:.*|image: ${BACKEND_IMAGE}:${TAG}|g' k8s/backnd-deploy.yaml
+            sed -i 's|image: .*/ecommerce-frontend:.*|image: ${FRONTEND_IMAGE}:${TAG}|g' k8s/frotend-deploy.yaml
             """
 
             // Commit & push changes

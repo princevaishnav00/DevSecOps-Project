@@ -105,7 +105,6 @@ pipeline {
         body: """<p>SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'</p>
                 <p>Check the console output at: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
         to: 'princevaishnav936@gmail.com',
-        from: 'jenkins@example.com'
       )
     }
     failure {
@@ -114,7 +113,6 @@ pipeline {
         body: """<p>FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'</p>
                 <p>Check the console output at: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
         to: 'princevaishnav936@gmail.com',
-        from: 'jenkins@example.com'
       )
     }
   }

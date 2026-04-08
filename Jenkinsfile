@@ -78,8 +78,8 @@ pipeline {
 
             // Update image tags
             sh """
-            sed -i 's|image: .*/ecommerce-backend:.*|image: ${BACKEND_IMAGE}:${TAG}|g' k8s/backnd-deploy.yaml
-            sed -i 's|image: .*/ecommerce-frontend:.*|image: ${FRONTEND_IMAGE}:${TAG}|g' k8s/frotend-deploy.yaml
+            sed -i 's|image: .*/ecommerce-backend:.*|image: ${BACKEND_IMAGE}:${TAG}|g' k8s/backend-deploy.yaml
+            sed -i 's|image: .*/ecommerce-frontend:.*|image: ${FRONTEND_IMAGE}:${TAG}|g' k8s/frontend-deploy.yaml
             """
 
             // Commit & push changes

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ecommerce-backend
-        image: prince511/ecommerce-backend:14
+        image: prince511/ecommerce-backend:3
         ports:
         - containerPort: 5000
         readinessProbe:

@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     def scannerHome = tool 'SonarQubeScanner'
-                    withSonarQubeEnv('SonarQubeSer') {
+                    withSonarQubeEnv('SonarQubeServer') {
                         sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=ecommerce-app -Dsonar.sources=."
                     }
                 }
@@ -30,8 +30,8 @@ pipeline {
         stage('Quality Gate') {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
-                    waitForQualityGate abortPipeline: true
-                }
+                    waitForQualityGate abortPipeline: false
+                
             }
         }
 

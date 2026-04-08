@@ -1,8 +1,8 @@
-# 🚀 Prince TechStore - DevSecOps E-Commerce Project
+# 🚀 DevSecOps TechStore Project
 
 ## 📌 Project Overview
 
-Prince TechStore is a **full-stack e-commerce demo application** built to demonstrate a complete **DevSecOps CI/CD pipeline** using modern cloud-native tools.
+**DevSecOps TechStore Project** is a **full-stack e-commerce demo application** built to demonstrate a complete **DevSecOps CI/CD pipeline** using modern cloud-native tools.
 
 This project showcases how to:
 
@@ -11,6 +11,7 @@ This project showcases how to:
 * Perform security scanning (SAST & Image Scanning)
 * Deploy applications on Kubernetes (AWS EKS)
 * Use GitOps principles for automated deployments
+* **Establish Full-Cluster Observability with Prometheus & Grafana**
 
 ---
 
@@ -23,7 +24,7 @@ User → LoadBalancer (AWS ELB)
         ↓
      Backend (Node.js API)
         ↓
-     Kubernetes (EKS Cluster)
+     Kubernetes (EKS Cluster)  ←── Monitoring (Prometheus & Grafana)
 ```
 
 ---
@@ -48,6 +49,8 @@ User → LoadBalancer (AWS ELB)
 * Trivy (Container Image Scanning)
 * Kubernetes (EKS)
 * GitHub (Version Control)
+* **Prometheus & Grafana (Monitoring & Observability)**
+* **ArgoCD (GitOps CD)**
 
 ---
 
@@ -60,6 +63,7 @@ User → LoadBalancer (AWS ELB)
 * 🛡️ Security scanning using Trivy
 * ☁️ Deployed on AWS EKS cluster
 * 🔁 GitOps-based deployment updates
+* 📊 **Real-time Monitoring & Dashboards (Prometheus/Grafana)**
 * 🎨 Responsive and modern UI
 
 ---
@@ -87,10 +91,8 @@ User → LoadBalancer (AWS ELB)
 ## ☸️ Kubernetes Deployment
 
 * **Frontend**
-
   * Deployment + LoadBalancer Service
 * **Backend**
-
   * Deployment + ClusterIP Service
 
 ---
@@ -110,23 +112,12 @@ http://<your-loadbalancer-url>
 ```
 E-commerce-DevSecOps/
 │
-├── backend/
-│   ├── server.js
-│   ├── Dockerfile
-│   └── images/
-│
-├── frontend/
-│   ├── index.html
-│   ├── styles.css
-│   ├── app.js
-│   ├── images/
-│   └── Dockerfile
-│
-├── k8s/
+├── backend/            # Express API & Dockerfile
+├── frontend/           # Static Client & Dockerfile
+├── k8s/                # Kubernetes Manifests
 │   ├── backend-deploy.yaml
 │   └── frontend-deploy.yaml
-│
-├── Jenkinsfile
+├── Jenkinsfile         # CI/CD Pipeline logic
 └── README.md
 ```
 
@@ -170,11 +161,12 @@ docker run -d -p 80:80 frontend
 
 This project demonstrates real-world DevSecOps practices including:
 
-* CI/CD automation
-* Container security
-* Kubernetes deployment
-* Cloud-native architecture
+* **Infrastructure**: AWS EKS (Kubernetes)
+* **CI/CD**: Jenkins + GitOps (Image Tag Automation)
+* **Security**: SonarQube (SAST) + Trivy (Image Scanning)
+* **Observability**: Prometheus & Grafana (Cluster Monitoring)
+* **Availability**: Zero-downtime Rolling Updates 
 
 ---
 
-🔥 *Built with passion for DevSecOps & Cloud Engineering*
+🔥 *Built with passion for DevOps & Cloud Engineering*

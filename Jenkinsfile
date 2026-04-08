@@ -30,7 +30,7 @@ pipeline {
         stage('Quality Gate') {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
-                    waitForityGate Pipeline: false
+                    waitForQualityGate abortPipeline: false
                 }
             }
         }
@@ -38,8 +38,8 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 script {
-                    sh "docker build -t ${BACKEND_IMAGE}:${TAG} ./backend"
-                    sh "docker build -t ${FRONTEND_IMAGE}:${TAG} ./frontend"
+                    sh "docker build -t ${BACKEND_IMAGE}:${TAG} ./bckend"
+                    sh "docker build -t ${FRONTEND_IMAGE}:${TAG} ./frntend"
                 }
             }
         }

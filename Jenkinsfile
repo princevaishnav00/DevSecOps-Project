@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                 git branch: 'main', url: 'https://github.com/princevaishnav00/E-commerce-DevSecOps.git'
+                 git branch: 'main', url: 'https://github.com/princevaishnav00/DevSecOps-Project.git'
             }
         }
 

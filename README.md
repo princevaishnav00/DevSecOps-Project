@@ -56,18 +56,9 @@ User → LoadBalancer (AWS ELB)
 
 ---
 
-## ⚙️ Features
+## 🔄 Architecture Diagram 
 
-* 🛒 Display products dynamically from backend API
-* 🐳 Dockerized frontend & backend
-* 🔄 Automated CI/CD pipeline with Jenkins
-* 🔐 Code quality check using SonarQube
-* 🛡️ Security scanning using Trivy
-* ☁️ Deployed on AWS EKS cluster
-* 🔁 GitOps-based deployment updates
-* 📊 Real-time Monitoring & Dashboards (Prometheus/Grafana)
-* 📧 Automated Email Notifications (Success/Failure)
-* 🎨 Responsive and modern UI
+![DevSecOps TechStore Workflow](./Screenshots/Workflow.png)
 
 ---
 
@@ -108,6 +99,8 @@ User → LoadBalancer (AWS ELB)
 ```
 http://<your-loadbalancer-url>
 ```
+---
+![ TechStore Website ](./Screenshots/Techstore-Website.png)
 
 ---
 

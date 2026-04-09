@@ -25,7 +25,7 @@ User → LoadBalancer (AWS ELB)
         ↓
      Backend (Node.js API)
         ↓
-     Kubernetes (EKS Cluster)  ←── Monitoring (Prometheus & Grafana)
+     Kubernetes (EKS Cluster)  ──→ Monitoring (Prometheus & Grafana)
 ```
 
 ---
@@ -125,22 +125,29 @@ E-commerce-DevSecOps/
 ### 1. Clone Repo
 
 ```bash
-git clone https://github.com/your-username/E-commerce-DevSecOps.git
-cd E-commerce-DevSecOps
+git clone https://github.com/princevaishnav00/DevSecOps-Project.git
+cd DevSecOps-Project
 ```
 
-### 2. Build Docker Images
+### 2. Run with Docker Compose
+
+The easiest way to run the entire stack is using Docker Compose:
 
 ```bash
-docker build -t backend ./backend
-docker build -t frontend ./frontend
+docker compose up -d --build
 ```
 
-### 3. Run Containers
+### 3. Access the Application
+
+Once the containers are running, you can access the project at:
+
+* **Frontend:** [http://localhost:8080](http://localhost:8080)
+* **Backend API:** [http://localhost:5000](http://localhost:5000)
+
+### 4. Stop the Containers
 
 ```bash
-docker run -d -p 5000:5000 backend
-docker run -d -p 80:80 frontend
+docker compose down
 ```
 
 ---
